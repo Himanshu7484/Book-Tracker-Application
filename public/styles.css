@@ -1,0 +1,207 @@
+/* === GLOBAL STYLES === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #4f46e5;
+  margin-top: 1.5rem;
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+
+header p {
+  color: #555;
+}
+
+/* === MAIN CONTAINER === */
+.container, .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* === INDEX PAGE (BOOK LIST) === */
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  background-color: #f9fafb;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+li strong {
+  color: #1e1e1e;
+  font-size: 1.1rem;
+}
+
+li img {
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+li form {
+  display: inline;
+}
+
+li form button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+li form button:hover {
+  background-color: #dc2626;
+}
+
+/* === ADD BUTTON (INDEX PAGE) === */
+.add-btn {
+  display: block;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.add-btn:hover {
+  background-color: #4338ca;
+}
+
+/* === ADD BOOK FORM === */
+.add-book-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+/* === FORM BUTTONS === */
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.save-btn {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #4338ca;
+}
+
+.cancel-btn {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #d1d5db;
+}
+
+/* === FOOTER === */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 600px) {
+  .container, .form-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .save-btn, .cancel-btn, .add-btn {
+    width: 100%;
+  }
+}

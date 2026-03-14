@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a Book | Book Tracer App</title>
+  <link rel="stylesheet" href="/styles.css"> 
+</head>
+<body>
+  <header class="header">
+    <h1>📚 Add a Book</h1>
+    <p>Keep track of what you’ve read by logging your book details below.</p>
+  </header>
+
+  <main class="form-container">
+    <form action="/add" method="POST" class="add-book-form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" placeholder="Book title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input id="author" name="author" type="text" placeholder="Author name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="finished_date">Finished Date</label>
+        <input id="finished_date" name="finished_date" type="date">
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <select id="rating" name="rating" required>
+          <option value="">Select rating</option>
+          <option value="1">1 — Poor</option>
+          <option value="2">2 — Fair</option>
+          <option value="3">3 — Good</option>
+          <option value="4">4 — Very Good</option>
+          <option value="5">5 — Excellent</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Any thoughts..."></textarea>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit">Add Book</button>
+        <a href="/" class="cancel-button">Cancel</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

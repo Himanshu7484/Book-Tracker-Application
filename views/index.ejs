@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📚 Book Tracker App</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>📖 My Book Journal</h1>
+    <p>Track your reading progress, ratings, and notes — all in one place.</p>
+    <button class="add-btn" onclick="window.location.href='/add'">+ Add New Book</button>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Books I've Read</h2>
+
+    <% if (books.length === 0) { %>
+      <p class="empty-text">No books added yet. Start by adding your first book!</p>
+    <% } else { %>
+      <div class="book-grid">
+        <% books.forEach(book => { %>
+          <div class="book-card">
+            <div class="book-info">
+              <h3><%= book.title %></h3>
+              <p class="author">by <%= book.author %></p>
+              <p><strong>Finished:</strong> 
+                <%= book.finished_date ? new Date(book.finished_date).toDateString() : "Not set" %>
+              </p>
+              <p><strong>Rating:</strong> ⭐ <%= book.rating %>/5</p>
+              <p class="notes"><strong>Notes:</strong> <%= book.notes || "No notes added." %></p>
+            </div>
+            <form action="/delete/<%= book.id %>" method="POST">
+              <button class="delete-btn">🗑 Delete</button>
+            </form>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+
+  <footer class="footer">
+    <p>© <%= new Date().getFullYear() %> Book Tracker App. Built with ❤️ using Node.js, Express, and PostgreSQL.</p>
+  </footer>
+</body>
+</html>
