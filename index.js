@@ -3,6 +3,7 @@ import express from 'express';
 import pg from 'pg';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import 'dotenv/config';
 
 const app = express();
 const port = 3000;
@@ -13,11 +14,11 @@ const __dirname = path.dirname(__filename);
 
 // === DATABASE CONNECTION ===
 const db = new pg.Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'book_tracer',
-  password: 'Deep#2007', 
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD, 
+  port: process.env.DB_PORT,
 });
 db.connect()
   .then(() => console.log('✅ Connected to PostgreSQL'))
